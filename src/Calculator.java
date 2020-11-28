@@ -1,3 +1,5 @@
+//Project: Create a full-fledge calculator
+
 import java.util.Scanner;
 
 public class Calculator {
