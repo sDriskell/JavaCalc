@@ -1,10 +1,13 @@
-//Project: Create a full-fledge calculator
+//Project: Create a full-fledged calculator
 
 import java.util.Scanner;
 
 public class Calculator {
-	public static boolean isNumeric(String strNum) {
-		// Create boolean check to ascertain if valid number.
+	private static String firstNumber;
+	private static String secondNumber;
+	private static String arth;
+	private static double total;
+	public static boolean isNumeric(String strNum) { // Creator of function: baeldung
 		if (strNum == null) {
 			return false;
 		}
@@ -14,10 +17,9 @@ public class Calculator {
 			return false;
 		}
 		return true;
-	}
+	}	
 	public static void main(String[] args) {
-		String firstNumber, secondNumber;
-	
+
 		Scanner scan = new Scanner(System.in);
 
 		do {
@@ -28,10 +30,28 @@ public class Calculator {
 		} while (isNumeric(firstNumber) == false &&
 				isNumeric(secondNumber) == false);
 
+		System.out.println("+, -, *, or / : ");
+		arth = scan.nextLine();
+		if (arth.contains("+")) {
+			total = Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber);
+		}
+		else if (arth.contains("-")) {
+			total = Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber);
+		}
+		else if (arth.contains("*")) {
+			total = Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber);
+		}
+		else if (arth.contains("/")) {
+			total = Double.parseDouble(firstNumber) / Double.parseDouble(secondNumber);
+		}
+		else {
+			System.out.println("Incorrect symbol.");
+		}
+		
 		try {
-			System.out.println("Total: " + (Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber)));
+			System.out.println("Total: " + total);
 		} catch (Exception e) {
-			System.out.println("One or more numbers not valid.");
+			System.out.println("One or more component not valid.");
 		}
 		scan.close();
 	}
