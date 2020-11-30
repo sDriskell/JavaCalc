@@ -3,18 +3,6 @@
 import java.util.Scanner;
 
 public class Calculator {
-
-	public static boolean isNumeric(String strNum) { // Creator of function: baeldung
-		if (strNum == null) {
-			return false;
-		}
-		try {
-			double d = Double.parseDouble(strNum);
-		} catch (NumberFormatException nfe) {
-			return false;
-		}
-		return true;
-	}	
 	public static void main(String[] args) {
 		Scanner  scan = new Scanner(System.in);
 		String   firstNumber;
@@ -22,14 +10,15 @@ public class Calculator {
 		String   arth;
 		char     keepGoing;
 		double   total = 0;
+		IsNumeric isNum = new IsNumeric();
 		do {
 			do {
 				System.out.print("Enter 1st number: ");
 				firstNumber = scan.nextLine();
 				System.out.print("Enter 2nd number: ");
 				secondNumber = scan.nextLine();
-			} while (isNumeric(firstNumber) == false &&
-					isNumeric(secondNumber) == false);
+			} while (isNum.isNumeric(firstNumber) == false &&
+					isNum.isNumeric(secondNumber) == false);
 	
 			System.out.println("+, -, *, or / : ");
 			arth = scan.nextLine();
