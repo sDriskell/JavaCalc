@@ -16,12 +16,12 @@ public class Calculator {
 		return true;
 	}	
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		String  firstNumber;
-		String  secondNumber;
-		String  arth;
-		char    keepGoing;
-		double  total = 0;
+		Scanner  scan = new Scanner(System.in);
+		String   firstNumber;
+		String   secondNumber;
+		String   arth;
+		char     keepGoing;
+		double   total = 0;
 		do {
 			do {
 				System.out.print("Enter 1st number: ");
